@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Recognition AI</title>
+    <link rel="stylesheet" href="./../static/css/bulma.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const fileInput = document.querySelector('.file-input');
+            const filenameSpan = document.getElementById('filename');
+
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                filenameSpan.textContent = file ? file.name : 'Choose a file...';
+            });
+        });
+    </script>
+</head>
+<body class="customBody">
+    <div style="text-align: center;width: 120%;height: 150px;transform: translate(-8%, -22%);position: relative;background-color: #fafafa">
+        <br><br><h1 style="font-size: 48px;">Image Recognition AI</h1>
+    </div>
+    <div class="columns is-centered">
+        <img src={{testImagePath}} style="max-width: 450px">
+    </div>
+        <br>
+        <h1 class="columns is-centered" style="font-size: 26px;font-weight: bold">Your image is a {{testResultString}}</h1>
+        <br>
+        <form class="columns is-centered" action="/" method="get">
+            <input type="submit" value="Go Back" class="button is-link">
+        </form>
+
+
+
+</body>
+</html>

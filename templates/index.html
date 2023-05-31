@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Recognition AI</title>
+    <link rel="stylesheet" href="./../static/css/bulma.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const fileInput = document.querySelector('.file-input');
+            const filenameSpan = document.getElementById('filename');
+
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                filenameSpan.textContent = file ? file.name : 'Choose a file...';
+            });
+        });
+    </script>
+</head>
+<body class="customBody">
+    <div style="text-align: center;width: 120%;height: 150px;transform: translate(-8%, -22%);position: relative;background-color: #fafafa">
+        <br><br><h1 style="font-size: 48px;">Image Recognition AI</h1>
+    </div>
+    <br><br>
+    <div class="columns is-centered">
+        <form class="columns is-centered" action="/test" method="post" enctype="multipart/form-data">
+            <div class="file has-name is-right">
+              <label class="file-label">
+                <input class="file-input" type="file" name="testImage" id="testImage">
+                <span class="file-cta">
+                  <span class="file-label">
+                    Choose a file…
+                  </span>
+                </span>
+                <span class="file-name" id="filename">
+                  Screen Shot 2017-07-29 at 15.54.25.png
+                </span>
+              </label>
+            </div>
+            &emsp;
+            <input type="submit" value="Classify Image!" class="button is-link">
+        </form>
+    </div>
+
+    <div style="text-align: center;">
+        <h3>Example (changes every server restart)</h3>
+        <img src="./../static/results/croppedTestSubplots.png" width="70%"><br>
+    </div>
+
+
+</body>
+</html>
